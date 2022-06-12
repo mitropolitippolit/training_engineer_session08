@@ -1,65 +1,60 @@
 ---
-- name: Dream LLC
-  departments_list:
-    - dep_name: dep1
+- org_name: Dream LLC
+  org_dep_dict:
+
+    - dep_name: Department 1
+      dep_age_rank: n/a
       dep_salary_rank: 1
-      dep_age_rank: n/a 
       dep_user_dict:
-        - name: Olga
-          prof: accountant
-        - name: Olga
-          prof: accountant
-        - name: Olga
-          prof: accountant
-        - name: Olga
-          prof: accountant
-        - name: Dmitry
-          prof: n/a 
-        - name: Dmitry
-          prof: n/a
-        - name: Dmitry
-        - name: Ivan
-          prof: n/a
-        - name: Ivan
-          prof: n/a
-    - dep_name: dep2
-      dep_age_rank: n/a
-      dep_salary_rank: n/a
-      dep_user_dict: 
-        - name: Roman
-          prof: lawyer
-        - name: Roman
-          prof: lawyer
-        - name: Roman
-          prof: lawyer
-        - name: Roman
-          prof: lawyer
-        - name: Maxim
-          prof: driver
-        - name: Maxim
-          prof: driver
-    - dep_name: dep3
-      dep_salary_rank: n/a
-      dep_age_rank: n/a
-      dep_user_dict:
-        - name: Ivan
-          prog: builder
-        - name: Nikolay
-          prof: builder
-        - name: Olga
-          prof: lawyer
-    - dep_name: dep4
-    - dep_name: dep5
-      dep_salary_rank: 2
+        - {name: Olga, job: Accountant, age: n/a}
+        - {name: Olga, job: Accountant, age: n/a}
+        - {name: Olga, job: Accountant, age: n/a}
+        - {name: Olga, job: Accountant, age: n/a}
+        - {name: Dmitry, job: n/a, age: n/a}
+        - {name: Dmitry, job: n/a, age: n/a}
+        - {name: Dmitry, job: n/a, age: n/a}
+        - {name: Ivan, job: n/a, age: n/a}
+
+    - dep_name: Department 2
       dep_age_rank: 1
+      dep_salary_rank: n/a
       dep_user_dict:
-        - name: Julia
-          age: 30+
-          prof: doc
-    - dep_name: dep6
+        - {name: Roman, job: Lawyer, age: <30}
+        - {name: Roman, job: Lawyer, age: <30}
+        - {name: Roman, job: Lawyer, age: <30}
+        - {name: Roman, job: Lawyer, age: <30}
+        - {name: Maxim, job: driver, age: <30}
+
+    - dep_name: Department 3
       dep_age_rank: n/a
       dep_salary_rank: n/a
       dep_user_dict:
-        - name: Igor Victorovich
-          prof: security manager
-          age: 50+
+        - {name: Ivan, job: Builder, age: n/a}
+        - {name: Nikolay, job: Builder, age: n/a}
+        - {name: Olga, job: Lawyer, age: n/a}
+
+    - dep_name: Department 4
+      dep_age_rank: n/a
+      dep_salary_rank: n/a
+      dep_user_dict: &dep4_user_dict
+        - {name: Julia, job: Document Controller, age: 30+}
+        - {name: Julia, job: Document Controller, age: 30+}
+        - {name: Julia, job: Document Controller, age: 30+}
+        - {name: Julia, job: Document Controller, age: 30+}
+        - {name: Julia, job: Document Controller, age: 30+}
+      dep_comment_list:
+        - Combined with Department 5
+
+    - dep_name: Department 5
+      dep_age_rank: 6
+      dep_salary_rank: 2
+      dep_user_dict: *dep4_user_dict
+      dep_comment_list:
+        - Combined with Department 4
+        - All men have reached retirement age
+
+    - dep_name: Department 6
+      dep_age_rank: n/a
+      dep_salary_rank: n/a
+      dep_user_dict:
+        - {name: Igor Victorovich, job: Security Director, age: 50+}
